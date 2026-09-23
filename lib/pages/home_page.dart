@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> pages = [
     // shop pages
     const ShopPage(),
+    //cart page
     const CartPage(),
   ];
 
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         backgroundColor: Colors.grey[300],
         child: Column(
+
           children: [
             //logo
             DrawerHeader(child: Image.asset('lib/images/logo.webp')),
@@ -63,6 +65,7 @@ class _HomePageState extends State<HomePage> {
 
             //Other pages
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Padding(
                   padding: EdgeInsets.only(left: 25.0),
