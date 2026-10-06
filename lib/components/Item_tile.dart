@@ -4,8 +4,9 @@ import '../models/item.dart';
 
 class ItemTile extends StatelessWidget {
   Item item;
+  void Function()? onTap;
 
-  ItemTile({super.key, required this.item});
+  ItemTile({super.key, required this.item, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -48,16 +49,19 @@ class ItemTile extends StatelessWidget {
                   ),
 
                   //button to add to cart
-                  Container(
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12),
+                  GestureDetector(
+                    onTap: onTap,
+                    child: Container(
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12),
+                        ),
                       ),
+                      child: const Icon(Icons.add, color: Colors.white),
                     ),
-                    child: const Icon(Icons.add, color: Colors.white),
                   ),
                 ],
               ),
